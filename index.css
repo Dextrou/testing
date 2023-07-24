@@ -1,0 +1,86 @@
+*,*::before,*::after{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.cards{
+    width: 300px;
+}
+.cards-contents{
+    position: relative;
+    height: 40vh;
+    transition: transform 8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    transform-style: preserve-3d;
+
+}
+.cards:hover .cards-contents{
+    transform: rotateY(0.5turn);
+}
+.cards-front,.cards-back{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom:0;
+    display: grid;
+    border-radius: 20px;
+    align-content: center;
+    text-align: center;
+    place-items: center;
+    transform-style:preserve-3d ;
+    backface-visibility: hidden;
+    
+}
+.cards-front::before{
+    content: '';
+    border: 2.3px solid black;
+    width: 240px;
+    position: absolute;
+    height: 30vh;
+    left: 2em;
+    right:0;
+    transform: translateZ(2em);
+    top: 2em;
+    backdrop-filter: saturate(22px);
+    bottom: 0;
+    box-shadow: 0px 0px 30px 20px rgba(128, 126, 131, 0.679);
+    border-radius: 20px;
+}
+.cards-front{
+    background: url('./fair.jpg');
+    background-size: cover;
+    background-blend-mode: luminosity;
+}
+.cards-front h3{
+    font-size: 2em;
+    color: green;
+    opacity: 0.5;
+}
+.cards-back{
+    background-color: rgb(234, 230, 230);
+    color: rgb(225, 79, 79);
+    transform: rotateY(0.5turn);
+}
+.call{
+    font-size: 5em;
+    color: rgb(7, 159, 164);
+    text-decoration: none;
+    transform: translateZ(1em);
+}
+.name{
+    transform: translateZ(2em);
+}
+.profession{
+    color:whitesmoke;
+    font-size: 1em;
+    font-weight: 600;
+    transform: translateZ(7em);
+}
